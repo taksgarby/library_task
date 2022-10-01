@@ -1,7 +1,8 @@
 from flask import render_template, request, redirect
 from app import app
 from models.book import *
-from models.books import books, add_new_book
+from models.books import books, add_new_book, remove_book
+import datetime
 
 @app.route("/")
 def home():
@@ -31,6 +32,11 @@ def add_book():
   author = request.form['author']
   genre = request.form['genre']
   new_book = Book(title=title, author= author, genre=genre)
+  # date = request.form['return_by']
+  # # Split the date into a list
+  # split_date = date.split('-')
+  # # create a new date object
+  # date = datetime.date(int(split_date[0]), int(split_date[1]), int(split_date[2]))
   add_new_book(new_book)
 
   return redirect("/books")
@@ -39,14 +45,10 @@ def add_book():
   # description = request.form['description']
   
 @app.route('/remove')
-def remove_book():
+def remove_page():
   return render_template("remove.html", title="Remove", books = books)
 
-# # @app.route('/')
-# @app.route('/books', methods=["POST"])
-# def remove_book():
-#   title = request.form['title']
-#   remove_book = Book(title=title)
-#   remove_book_by_title(remove_book)
-
-#   return redirect("/books")
+@app.route('/remove/<title>', methods=['POST'])
+def remove(title):
+  remove_book(title)
+  return redirect('/remove')

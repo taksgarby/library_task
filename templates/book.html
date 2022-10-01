@@ -11,6 +11,11 @@
     <div>
         <h3>Author(s): {{book.author}}</h3>
         <h3>Genre: {{book.genre}}</h3>
+        {% if book.checked_out %}
+        <p><h3>This book is available</h3></p>
+        {% else %}
+        <p><h3>This book is checked</h3></p>
+        {% endif %}
     </div>
 </body>
 </html>
