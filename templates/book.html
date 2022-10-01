@@ -14,7 +14,7 @@
         {% if book.checked_out %}
         <p><h3>This book is available</h3></p>
         {% else %}
-        <p><h3>This book is checked</h3></p>
+        <p><h3>This book is checked out until {{book.return_by}}</h3></p>
         {% endif %}
     </div>
 </body>

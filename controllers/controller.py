@@ -31,12 +31,13 @@ def add_book():
   title = request.form['title']
   author = request.form['author']
   genre = request.form['genre']
-  new_book = Book(title=title, author= author, genre=genre)
-  # date = request.form['return_by']
-  # # Split the date into a list
-  # split_date = date.split('-')
-  # # create a new date object
-  # date = datetime.date(int(split_date[0]), int(split_date[1]), int(split_date[2]))
+  return_by = request.form['return_by']
+  new_book = Book(title=title, author= author, genre=genre, checked_out = False,  return_by= return_by)
+
+  # Split the date into a list
+  split_date = return_by.split('-')
+  # create a new date object
+  return_by = datetime.date(int(split_date[0]), int(split_date[1]), int(split_date[2]))
   add_new_book(new_book)
 
   return redirect("/books")
