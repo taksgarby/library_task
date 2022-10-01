@@ -41,9 +41,7 @@ def add_book():
   add_new_book(new_book)
 
   return redirect("/books")
-  # True if 'recurring' in request.form else False
-  # roomLocation = request.form['roomLocation']
-  # description = request.form['description']
+
   
 @app.route('/remove')
 def remove_page():
