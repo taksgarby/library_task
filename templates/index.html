@@ -3,10 +3,15 @@
 {% block content %}
     {% for book in books %}
  
-        <div>
-            <p>{{book.title}}, {{book.author}}</p>
-            <p>Genre: {{book.genre}}</p>
-            <a href="/books/{{books.index(book)}}">Show Details</a>
+        <div class="book-list">
+            <!-- <p class="book-title"></p>
+            <p class="book-author"> </p>
+            <p class="book-genre"></p>
+             -->
+            <h2>{{book.title}}</h2>
+            <h3>- {{book.author}}</h3>
+            <h4>Genre: {{book.genre}}</h4>
+            <h5><a href="/books/{{books.index(book)}}">Show Details</a></h5>
             <hr>
         </div>
     {% endfor %}

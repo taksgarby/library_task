@@ -32,9 +32,24 @@ h3 {
 .choice a {
     text-decoration: none;
     font-size: 1.2rem;
-    color: darkslategrey;
+    color: ;
 }
 
-.book-list h1 {
-    font-size: 2rem;
+.book-list {
+    padding-left: 2rem;
+    margin: 0;
+}
+
+.book-list h2 {
+    color: #155263;
+
+}
+
+.book-list h3 {
+    font-style: italic;
+    margin-left: 3rem;
+}
+
+.book-list h4 {
+    color:#146176;
 }
