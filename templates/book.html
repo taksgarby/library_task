@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>{{book.title}}</h1>
-    <div>
-        <h3>Author(s): {{book.author}}</h3>
-        <h3>Genre: {{book.genre}}</h3>
+<div class="book-list">
+    <h1><b>{{book.title}}</b></h1>
+
+        <h3 class="author">Author(s): {{book.author}}</h3>
+        <h3 class="genre">Genre: {{book.genre}}</h3>
         {% if book.checked_out %}
         <p><h3>This book is available</h3></p>
         {% else %}
         <p><h3>This book is checked out until {{book.return_by}}</h3></p>
         {% endif %}
-    </div>
+  
+</div>
     {% endblock %}

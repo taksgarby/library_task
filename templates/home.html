@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-   <div> <a href="/books"> All books</a></div>
-   <div><a href="/add">Add new book</a></div>
-   <div><a href="/remove">Remove book</a></div>
+<h1>Welcome to CC Library</h1>
+<h3>Please choose from the following:</h3>
+<div class="choices">
+   <div class="choice"> <a href="/books">Show all books</a></div>
+   <div class="choice"><a href="/add">Add book</a></div>
+   <div class="choice"><a href="/remove">Remove book</a></div>
+</div>
 {% endblock %}
