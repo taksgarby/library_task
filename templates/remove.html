@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<body>
+
     {% for book in books %}
-        <div>
-            <p>{{book.title}}, {{book.author}}</p>
+        <div class="book-list">
+            <h2>{{book.title}}, {{book.author}}</h2>
             <p>Genre: {{book.genre}}</p>
             <div class="form">
             <form action="/remove/{{book.title}}" method="post">
                 <label for="remove">Remove this book?</label>
                 <input type="submit" value="Delete">
             </form>
+            </div>
         </div>
-     
+     <hr>
     {% endfor %}
     {% endblock %}
