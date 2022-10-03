@@ -76,3 +76,7 @@ h3 {
 .book-detail .checked-out {
     color: green;
 }
+
+.book-detail h4 {
+    color: #146176;
+}

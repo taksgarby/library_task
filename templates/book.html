@@ -8,8 +8,19 @@
         <h3 class="genre">Genre: {{book.genre}}</h3>
         {% if book.checked_out %}
         <h3 class="not-checked-out">&#9745 This book is available</h3>
+        <form action="/book.html">
+        <h4>Check out?</h4>
+        <input type="checkbox" id="check_out" name="check_out" value="checked_out">
+
+        
+          
         {% else %}
         <h3 class="checked-out">! This book is checked out until {{book.return_by}}</h3>
+        <h4>Check in?</h4>
+        <input type="checkbox" id="check_in" name="check_in" value="checked_in">
+    
+    
+    </form>
         {% endif %}
   
 </div>
